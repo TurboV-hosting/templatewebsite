@@ -3,226 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Hosting Template</title>
+    <title>Hosting | Your Website Name Here</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
 
     <style>
-        /* MODERN RESET */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            text-decoration: none;
-            list-style: none;
-        }
-
-        :root {
-            --bg: #020617;
-            --card: #0f172a;
-            --accent: #6366f1;
-            --text: #f8fafc;
-            --text-muted: #94a3b8;
-        }
-
-        body {
-            background-color: var(--bg);
-            color: var(--text);
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            line-height: 1.6;
-            overflow-x: hidden;
+        /* Modern Clean Reset */
+        * { margin: 0; padding: 0; box-sizing: border-box; text-decoration: none; list-style: none; }
+        :root { --bg: #020617; --card: #0f172a; --accent: #6366f1; --text: #f8fafc; --text-muted: #94a3b8; }
+        
+        body { 
+            background-color: var(--bg); 
+            color: var(--text); 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            line-height: 1.6; 
+            overflow-x: hidden; 
         }
 
         /* Navbar */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 8%;
-            background: rgba(2, 6, 23, 0.8);
-            backdrop-filter: blur(15px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+        .navbar { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 20px 8%; 
+            background: rgba(2, 6, 23, 0.8); 
+            backdrop-filter: blur(15px); 
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
         }
+        .logo { font-weight: 800; font-size: 1.2rem; letter-spacing: -0.5px; }
+        .nav-links { display: flex; align-items: center; gap: 30px; }
+        .nav-links a { color: var(--text-muted); font-size: 0.9rem; font-weight: 600; transition: 0.3s; }
+        .nav-links a:hover { color: var(--text); }
+        .btn-cta-nav { background: var(--text); color: var(--bg) !important; padding: 8px 18px; border-radius: 8px; }
 
-        .logo {
-            font-weight: 800;
-            font-size: 1.2rem;
-            letter-spacing: -0.5px;
+        /* Hero */
+        .hero { padding: 120px 8% 80px; text-align: center; }
+        .announcement { 
+            display: inline-block; 
+            background: rgba(99, 102, 241, 0.1); 
+            color: var(--accent); 
+            padding: 6px 16px; 
+            border-radius: 100px; 
+            font-size: 0.8rem; 
+            font-weight: 600; 
+            margin-bottom: 24px; 
+            border: 1px solid rgba(99, 102, 241, 0.2); 
         }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 30px;
+        .hero h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 800; line-height: 1.1; margin-bottom: 20px; }
+        .gradient-text { 
+            background: linear-gradient(90deg, #818cf8, #c084fc); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
         }
-
-        .nav-links a {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            font-weight: 600;
-            transition: 0.3s;
+        .hero p { color: var(--text-muted); max-width: 600px; margin: 0 auto 40px; font-size: 1.15rem; }
+        
+        .hero-actions { display: flex; justify-content: center; align-items: center; gap: 20px; }
+        .btn-primary { 
+            background: var(--accent); 
+            color: white; 
+            padding: 16px 32px; 
+            border-radius: 12px; 
+            font-weight: 600; 
+            box-shadow: 0 10px 20px -5px rgba(99, 102, 241, 0.4); 
+            transition: 0.2s ease;
         }
-
-        .nav-links a:hover {
-            color: var(--text);
-        }
-
-        .btn-cta-nav {
-            background: var(--text);
-            color: var(--bg) !important;
-            padding: 8px 18px;
-            border-radius: 8px;
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 100px 8%;
-            text-align: center;
-        }
-
-        .announcement {
-            display: inline-block;
-            background: rgba(99, 102, 241, 0.1);
-            color: var(--accent);
-            padding: 6px 16px;
-            border-radius: 100px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-            border: 1px solid rgba(99, 102, 241, 0.2);
-        }
-
-        .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 20px;
-        }
-
-        .gradient-text {
-            background: linear-gradient(90deg, #818cf8, #c084fc);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero p {
-            color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto 40px;
-            font-size: 1.1rem;
-        }
-
-        .btn-primary {
-            background: var(--accent);
-            color: white;
-            padding: 16px 32px;
-            border-radius: 12px;
-            font-weight: 600;
-            display: inline-block;
-            box-shadow: 0 10px 20px -5px rgba(99, 102, 241, 0.4);
-        }
-
-        .btn-secondary {
-            color: var(--text);
-            margin-left: 20px;
-            font-weight: 600;
-        }
+        .btn-primary:hover { transform: translateY(-2px); filter: brightness(1.1); }
+        .btn-secondary { color: var(--text); font-weight: 600; transition: 0.2s; }
+        .btn-secondary:hover { color: var(--accent); }
 
         /* Pricing Section */
-        .pricing-container {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            padding: 50px 8%;
-            flex-wrap: wrap;
+        .pricing-container { 
+            display: flex; 
+            justify-content: center; 
+            gap: 30px; 
+            padding: 40px 8% 100px; 
+            flex-wrap: wrap; 
         }
-
-        .price-card {
-            background: var(--card);
-            padding: 40px;
-            border-radius: 24px;
-            width: 320px;
-            border: 1px solid rgba(255,255,255,0.05);
-            position: relative;
-            transition: 0.3s;
+        .price-card { 
+            background: var(--card); 
+            padding: 40px; 
+            border-radius: 24px; 
+            width: 380px; 
+            border: 1px solid rgba(255,255,255,0.05); 
+            position: relative; 
+            transition: 0.3s; 
         }
-
-        .price-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--accent);
+        .price-card:hover { transform: translateY(-10px); border-color: var(--accent); }
+        .featured { 
+            border: 1px solid var(--accent); 
+            background: linear-gradient(180deg, #0f172a 0%, #1e1b4b 100%); 
         }
-
-        .featured {
-            border: 1px solid var(--accent);
-            background: linear-gradient(180deg, #0f172a 0%, #1e1b4b 100%);
+        .badge { 
+            position: absolute; 
+            top: -12px; 
+            left: 50%; 
+            transform: translateX(-50%); 
+            background: var(--accent); 
+            padding: 4px 12px; 
+            border-radius: 100px; 
+            font-size: 0.7rem; 
+            font-weight: 700; 
         }
+        
+        .plan-name { font-size: 1.5rem; font-weight: 800; margin-bottom: 10px; }
+        .amount { font-size: 2.8rem; font-weight: 800; margin-bottom: 25px; }
+        .amount span { font-size: 1rem; color: var(--text-muted); }
+        
+        .features { margin-bottom: 30px; }
+        .features li { color: var(--text-muted); margin-bottom: 12px; font-size: 0.95rem; padding-left: 25px; position: relative; }
+        .features li::before { content: "✓"; position: absolute; left: 0; color: var(--accent); font-weight: 800; }
 
-        .badge {
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--accent);
-            padding: 4px 12px;
-            border-radius: 100px;
-            font-size: 0.7rem;
-            font-weight: 700;
-        }
-
-        .amount {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin: 20px 0;
-        }
-
-        .amount span {
-            font-size: 1rem;
-            color: var(--text-muted);
-        }
-
-        .features li {
-            color: var(--text-muted);
-            margin-bottom: 10px;
-            font-size: 0.9rem;
-            padding-left: 20px;
-            position: relative;
-        }
-
-        /* Modern checkmark bullets */
-        .features li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-        }
-
-        .btn-card {
-            width: 100%;
-            margin-top: 30px;
-            padding: 12px;
-            border-radius: 10px;
-            border: none;
-            background: rgba(255,255,255,0.05);
-            color: white;
-            font-weight: 600;
-            cursor: pointer;
+        .btn-card { 
+            width: 100%; 
+            padding: 14px; 
+            border-radius: 10px; 
+            border: none; 
+            background: rgba(255,255,255,0.05); 
+            color: white; 
+            font-weight: 600; 
+            cursor: pointer; 
             transition: 0.2s;
         }
-
-        .btn-card:hover {
-            background: rgba(255,255,255,0.1);
-        }
-
-        .featured .btn-card {
-            background: var(--accent);
-        }
-
-        .featured .btn-card:hover {
-            filter: brightness(1.1);
-        }
+        .featured .btn-card { background: var(--accent); }
+        .btn-card:hover { background: rgba(255,255,255,0.1); }
+        .featured .btn-card:hover { filter: brightness(1.1); }
     </style>
 </head>
 <body>
@@ -232,24 +139,26 @@
         <div class="nav-links">
             <a href="#">Solutions</a>
             <a href="#">Network</a>
-            <a href="#">Pricing</a>
+            <a href="#pricing">Pricing</a>
             <a href="#" class="btn-cta-nav">Sign Up</a>
         </div>
     </nav>
 
     <header class="hero">
-        <div class="announcement">✨ Now offering DDR5 & Ryzen 9000 Nodes</div>
+        <div class="announcement">✨ Now offering Ryzen 9000 Series Nodes</div>
         <h1>Next-gen hosting for <br><span class="gradient-text">ambitious projects.</span></h1>
         <p>High-performance infrastructure meets minimalist design. Deploy your custom instances in under 60 seconds.</p>
+        
         <div class="hero-actions">
-            <a href="#" class="btn-primary">View Pricing</a>
-            <a href="#" class="btn-secondary">Technical Specs</a>
+            <a href="#pricing" class="btn-primary">View Pricing</a>
+            
+            <a href="https://turbov-hosting.github.io/templatewebsite/specs.html" class="btn-secondary">Technical Specs</a>
         </div>
     </header>
 
-    <section class="pricing-container">
+    <section id="pricing" class="pricing-container">
         <div class="price-card">
-            <h3>Starter Cloud</h3>
+            <h3 class="plan-name">Starter Cloud</h3>
             <div class="amount">$4.99<span>/mo</span></div>
             <ul class="features">
                 <li>1 vCPU (Shared)</li>
@@ -262,7 +171,7 @@
 
         <div class="price-card featured">
             <div class="badge">Recommended</div>
-            <h3>Performance</h3>
+            <h3 class="plan-name">Performance</h3>
             <div class="amount">$19.99<span>/mo</span></div>
             <ul class="features">
                 <li>4 vCPU (Dedicated)</li>
