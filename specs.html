@@ -1,1 +1,218 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Specifications | Your Website Name Here</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            list-style: none;
+        }
+
+        :root {
+            --bg: #020617;
+            --card: #0f172a;
+            --accent: #6366f1;
+            --text: #f8fafc;
+            --text-muted: #94a3b8;
+            --border: rgba(255, 255, 255, 0.05);
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: rgba(2, 6, 23, 0.8);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: var(--text);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--text);
+        }
+
+        /* Specs Content */
+        .specs-header {
+            padding: 80px 8% 40px;
+            text-align: center;
+        }
+
+        .specs-header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .specs-header p {
+            color: var(--text-muted);
+        }
+
+        .specs-container {
+            max-width: 1000px;
+            margin: 0 auto 100px;
+            padding: 0 8%;
+        }
+
+        .specs-grid {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            overflow: hidden;
+            margin-top: 40px;
+        }
+
+        .spec-row {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            border-bottom: 1px solid var(--border);
+            transition: background 0.2s;
+        }
+
+        .spec-row:last-child {
+            border-bottom: none;
+        }
+
+        .spec-row:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .spec-label {
+            padding: 24px;
+            background: rgba(0, 0, 0, 0.2);
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .spec-value {
+            padding: 24px;
+            font-weight: 400;
+            font-size: 1rem;
+        }
+
+        .spec-value strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* Back Button */
+        .back-nav {
+            margin-bottom: 40px;
+        }
+
+        .btn-back {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .spec-row {
+                grid-template-columns: 1fr;
+            }
+            .spec-label {
+                padding: 15px 24px 5px;
+            }
+            .spec-value {
+                padding: 5px 24px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">your website name here</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="#" class="active">Specs</a>
+            <a href="#">Network</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+
+    <header class="specs-header">
+        <h1>Hardware <span style="color: var(--accent);">Stack</span></h1>
+        <p>Transparent hardware details for our high-performance nodes.</p>
+    </header>
+
+    <main class="specs-container">
+        <div class="back-nav">
+            <a href="index.html" class="btn-back">← Back to Pricing</a>
+        </div>
+
+        <div class="specs-grid">
+            <div class="spec-row">
+                <div class="spec-label">Processors</div>
+                <div class="spec-value">AMD Ryzen™ 9 7950X / 9950X <strong>(Up to 5.7GHz)</strong></div>
+            </div>
+
+            <div class="spec-row">
+                <div class="spec-label">Memory</div>
+                <div class="spec-value">DDR5 5200MHz ECC Registered Memory</div>
+            </div>
+
+            <div class="spec-row">
+                <div class="spec-label">Storage</div>
+                <div class="spec-value">Samsung PM9A1 <strong>NVMe Gen4</strong> (RAID 1 Mirroring)</div>
+            </div>
+
+            <div class="spec-row">
+                <div class="spec-label">Network</div>
+                <div class="spec-value">10Gbps Uplink with <strong>Path.net DDoS Protection</strong></div>
+            </div>
+
+            <div class="spec-row">
+                <div class="spec-label">Datacenters</div>
+                <div class="spec-value">Dallas (US), Ashburn (US), London (UK), Frankfurt (DE)</div>
+            </div>
+
+            <div class="spec-row">
+                <div class="spec-label">Virtualization</div>
+                <div class="spec-value">KVM (Kernel-based Virtual Machine) for 100% dedicated resources</div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
