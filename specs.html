@@ -35,8 +35,12 @@
             text-align: center;
             position: relative;
             z-index: 1;
-            max-width: 600px;
-            padding: 20px;
+            max-width: 650px;
+            padding: 40px;
+            background: rgba(13, 17, 23, 0.4);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            backdrop-filter: blur(10px);
         }
 
         .hero-glow {
@@ -44,33 +48,31 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 600px;
-            height: 400px;
+            width: 700px;
+            height: 500px;
             background: var(--primary-glow);
-            filter: blur(100px);
+            filter: blur(120px);
             z-index: -1;
             border-radius: 50%;
         }
 
-        .icon-box {
-            width: 80px;
-            height: 80px;
+        .badge {
             background: rgba(79, 70, 229, 0.1);
-            border: 1px solid var(--primary);
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 32px;
             color: var(--accent);
-            font-size: 2rem;
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(79, 70, 229, 0.2);
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 24px;
         }
 
         h1 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-size: clamp(2rem, 5vw, 3rem);
             font-weight: 800;
             letter-spacing: -2px;
-            margin-bottom: 16px;
+            margin-bottom: 20px;
             line-height: 1.1;
         }
 
@@ -82,43 +84,42 @@
 
         p {
             color: var(--text-muted);
-            font-size: 1.1rem;
-            margin-bottom: 40px;
+            font-size: 1.2rem;
+            margin-bottom: 32px;
+            line-height: 1.6;
         }
 
-        .button-group {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
+        .feature-tag {
+            color: var(--accent);
+            font-weight: 600;
         }
 
         .btn {
-            padding: 14px 28px;
-            border-radius: 10px;
+            padding: 16px 32px;
+            border-radius: 12px;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             transition: 0.3s;
-            font-size: 0.95rem;
+            font-size: 1rem;
+            display: inline-block;
         }
 
         .btn-primary {
             background: var(--primary);
             color: white;
+            box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4);
         }
 
         .btn-primary:hover {
-            box-shadow: 0 0 20px var(--primary-glow);
+            box-shadow: 0 0 25px var(--primary-glow);
             transform: translateY(-2px);
+            background: #5a52ff;
         }
 
-        .btn-outline {
-            border: 1px solid var(--border);
-            color: var(--text-main);
-        }
-
-        .btn-outline:hover {
-            background: rgba(255, 255, 255, 0.05);
-            border-color: var(--text-muted);
+        .footer-note {
+            margin-top: 24px;
+            font-size: 0.85rem;
+            color: #475569;
         }
     </style>
 </head>
@@ -127,13 +128,21 @@
     <div class="hero-glow"></div>
 
     <div class="demo-container">
-        <div class="icon-box">✓</div>
-        <h1>Demo <span class="gradient-text">Completed.</span></h1>
-        <p>You've reached the end of the interactive preview. Ready to deploy your high-performance node?</p>
+        <span class="badge">Preview Mode Finished</span>
+        <h1>This is the <span class="gradient-text">end of the demo.</span></h1>
+        
+        <p>
+            Purchase this template to gain access to the <span class="feature-tag">full source code</span> and 
+            <span class="feature-tag">HTML files of every page</span>, including the Main Site, VPS, and Dedicated sections.
+        </p>
         
         <div class="button-group">
-            <a href="https://emma-novapup.github.io/HostingTemplateWebsite/#pricing" class="btn btn-primary">View Final Pricing</a>
-            <a href="https://emma-novapup.github.io/HostingTemplateWebsite/" class="btn btn-outline">Back to Home</a>
+            <!-- UPDATED LINK TO TURBOV SALES TEMPLATE -->
+            <a href="https://emma-novapup.github.io/TurboV/saletemplates.html" class="btn btn-primary">View Final Pricing</a>
+        </div>
+
+        <div class="footer-note">
+            Includes CSS, responsive layouts, and modern glow effects.
         </div>
     </div>
 
